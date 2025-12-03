@@ -1,0 +1,386 @@
+/* Custom CSS for Academia Performance */
+
+:root {
+  --brand-red: #ef4444; /* Tailwind red-500 */
+  --brand-red-dark: #b91c1c; /* red-700 */
+  --brand-red-light: #f87171; /* red-400 */
+}
+
+/* Font Family */
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.brand-logo {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+  background: transparent;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-red-light);
+}
+
+/* Custom Utilities */
+.bg-gray-750 {
+  background-color: #2d2d2d;
+}
+
+/* Animation for Hero Section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Hover Effects for Cards */
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+}
+
+/* Button Hover Effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.25);
+}
+
+/* Red glow for primary CTA */
+.btn-glow-red {
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Mobile Menu Animation */
+.mobile-menu {
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.mobile-menu.open {
+  max-height: 400px;
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  font-size: 1.1rem;
+}
+
+/* Table Responsive Design */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 8px 12px;
+  }
+}
+
+/* Pricing Card Special Effects */
+.pricing-card-premium {
+  position: relative;
+  overflow: visible;
+  border: 2px solid var(--brand-red-light);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  border-radius: 0.75rem;
+}
+
+.pricing-card-premium::before {
+  content: none;
+}
+
+@keyframes borderAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading Animation for Images */
+.image-loading {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.nav-link:focus,
+button:focus,
+a:focus {
+  outline: 2px solid var(--brand-red);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .bg-yellow-400 {
+    background-color: #ffff00;
+    color: #000000;
+  }
+
+  .text-yellow-400 {
+    color: #ffff00;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom Selection Color */
+::selection {
+  background-color: var(--brand-red);
+  color: #ffffff;
+}
+
+/* Custom Focus Ring */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.5);
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, #ff4d4d, var(--brand-red-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+/* Tilt card helper (JS adds transform) */
+.tilt-card {
+  will-change: transform;
+  transition: transform 0.2s ease;
+  perspective: 1000px;
+}
+
+/* Slow bounce animation for premium card (accessibility-friendly) */
+@keyframes bounceSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 6s ease-in-out infinite;
+}
+
+.card-standard {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pricing-card-standard {
+  border-radius: 0.75rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.badge-floating {
+  white-space: nowrap;
+}
+
+/* Hero red overlay accent */
+.hero-overlay-red {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(220, 38, 38, 0.35) 0%,
+    rgba(0, 0, 0, 0.6) 60%
+  );
+}
+
+/* Card Shadow Effects */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .heading-responsive {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .social-icon svg {
+    color: #ffffff;
+  }
+}
+
+/* Custom Breakpoints */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Dark Mode Specific Styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom Utilities for JavaScript */
+.js-enabled .no-js {
+  display: none;
+}
+
+.no-js .js-only {
+  display: none;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--brand-red);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

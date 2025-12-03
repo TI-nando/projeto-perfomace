@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-labelledby="title desc" role="img">
+  <title>Academia Performance - Logo</title>
+  <desc>Logo P em fita com curvas suaves e gradiente vermelho, sem fundo</desc>
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- topo curvo do P -->
+    <path d="M60 64c30-18 88-18 120 0 10 6 18 14 18 26s-8 22-18 28c-32 18-90 18-120 0l0-54z" fill="url(#grad1)"/>
+    <!-- haste e curva interna -->
+    <path d="M60 64v128c0 12 10 20 22 20h30v-70h46c26 0 40-12 40-34s-14-34-40-34h-98z" fill="url(#grad2)"/>
+    <!-- camada de fita interna para efeito 3D -->
+    <path d="M106 114h46c20 0 30-8 30-22s-10-22-30-22h-46z" fill="#7a0e0e" opacity="0.35"/>
+    <!-- brilho suave -->
+    <path d="M60 64c30-18 88-18 120 0 10 6 18 14 18 26s-8 22-18 28c-32 18-90 18-120 0l0-54z" fill="url(#shine)"/>
+  </g>
+</svg>
